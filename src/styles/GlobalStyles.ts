@@ -19,7 +19,12 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     font-family: "Pretendard";
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
   }
 `;
