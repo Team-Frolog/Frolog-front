@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { GlobalStyles } from './styles/GlobalStyles';
-import Home from './pages/Home';
+import HomePage from './pages/HomePage';
+import NoticePage from './pages/NoticePage';
 import MainLayout from './components/layout/MainLayout';
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       <GlobalStyles />
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/notice' element={<NoticePage />} />{' '}
         </Route>
       </Routes>
     </>

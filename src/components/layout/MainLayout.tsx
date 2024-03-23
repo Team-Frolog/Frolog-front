@@ -1,10 +1,11 @@
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import Header from '../common/Header';
 
 function MainLayout() {
   return (
     <Container>
-      {/* header 위치 */}
+      <Header />
       <Outlet />
       {/* navigation bar 위치 */}
     </Container>
