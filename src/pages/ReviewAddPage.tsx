@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function NoticePage() {
-  return <Container>NoticePage</Container>;
+function ReviewAddPage() {
+  return <Container>ReviewAddPage</Container>;
 }
 
-export default NoticePage;
+export default ReviewAddPage;
 
 const Container = styled.div`
   width: 100%;

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function NoticePage() {
-  return <Container>NoticePage</Container>;
+function SearchPage() {
+  return <Container>SearchPage</Container>;
 }
 
-export default NoticePage;
+export default SearchPage;
 
 const Container = styled.div`
   width: 100%;
