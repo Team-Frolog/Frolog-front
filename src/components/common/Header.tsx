@@ -3,6 +3,24 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import BellIcon from '../../assets/header/bell-02.svg';
 
+function Header() {
+  const navigate = useNavigate();
+
+  return (
+    <HeaderContainer>
+      <Logo onClick={() => navigate('/')}>Frolog</Logo>
+      <NotificationIcon
+        src={BellIcon}
+        alt='Notifications'
+        onClick={() => navigate('/notice')}
+      />
+      <BottomBar />
+    </HeaderContainer>
+  );
+}
+
+export default Header;
+
 const HeaderContainer = styled.header`
   width: 100%;
   height: 90px;
@@ -39,21 +57,3 @@ const BottomBar = styled.div`
   left: 0;
   bottom: 0;
 `;
-
-function Header() {
-  const navigate = useNavigate();
-
-  return (
-    <HeaderContainer>
-      <Logo onClick={() => navigate('/')}>Frolog</Logo>
-      <NotificationIcon
-        src={BellIcon}
-        alt='Notifications'
-        onClick={() => navigate('/notice')}
-      />
-      <BottomBar />
-    </HeaderContainer>
-  );
-}
-
-export default Header;
