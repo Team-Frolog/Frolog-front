@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     background: none;
     border: none;
     box-sizing: content-box;
+    padding: 0;
   }
   body {
     margin: 0;
