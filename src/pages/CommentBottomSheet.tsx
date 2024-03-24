@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { motion, useAnimation, useDragControls } from 'framer-motion';
 import Line from '../assets/bottomSheet/Line.svg';
+import { fadeUp } from '../styles/GlobalStyles';
 
 type CommentBottomSheetProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -84,6 +85,7 @@ const BottomSheet = styled(motion.div)`
   top: 20%;
   left: 0;
   z-index: 999;
+  animation: ${fadeUp} 1s;
 `;
 
 const Header = styled.button`

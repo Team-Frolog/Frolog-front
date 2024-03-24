@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
 import '../assets/font/font.css';
 import reset from 'styled-reset';
 
@@ -27,4 +27,9 @@ export const GlobalStyles = createGlobalStyle`
     align-items: center;
     background-color: #f1f1f1;
   }
+`;
+
+export const fadeUp = keyframes`
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0%); }
 `;
