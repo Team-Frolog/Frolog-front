@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Home() {
-  return <Container>Home</Container>;
+function WellPage() {
+  return <Container>WellPage</Container>;
 }
 
-export default Home;
+export default WellPage;
 
 const Container = styled.div`
   width: 100%;
