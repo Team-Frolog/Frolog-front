@@ -26,6 +26,8 @@ const Container = styled.div`
   height: calc(var(--vh, 1vh) * 100);
   background-color: white;
   border-radius: 0px;
+  position: relative;
+  overflow: hidden;
 
   // 모바일 사이즈(최대 430px)에서 벗어날 경우 사이즈 고정
   @media screen and (min-width: 430px) {

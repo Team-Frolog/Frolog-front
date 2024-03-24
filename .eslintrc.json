@@ -19,6 +19,7 @@
     // var 금지
     "no-var": "warn",
     "import/prefer-default-export": 0,
+    "@typescript-eslint/no-explicit-any": "off",
     // jsx 파일 확장자 .jx, .jsx, .ts, .tsx 허용
     "react/jsx-filename-extension": [
       2,
