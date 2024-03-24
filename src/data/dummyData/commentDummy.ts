@@ -65,3 +65,20 @@ export const commentDummy: CommentType[] = [
     min: 5,
   },
 ];
+
+export const replyDummy: CommentType[] = [
+  {
+    id: 1,
+    name: '정건우',
+    comment: '아주 재밌네요!',
+    like: 11,
+    min: 15,
+  },
+  {
+    id: 2,
+    name: '정건우',
+    comment: '저도 재밌게 읽었습니다.',
+    like: 5,
+    min: 12,
+  },
+];

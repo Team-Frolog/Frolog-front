@@ -21,19 +21,23 @@ export default CommentList;
 const Container = styled.div`
   flex: 1;
   width: 100%;
-  height: 100%;
-  overflow: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.bg_white};
 `;
 
 const Title = styled.h4`
+  height: fit-content;
   font-size: ${({ theme }) => theme.fontSize.md};
   text-align: center;
-  margin-top: 6px;
+  margin: 12px;
 `;
 
 const CommentContainer = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  margin: 28px 0;
-  gap: 24px;
+  padding-bottom: 12px;
+  overflow: auto;
 `;
