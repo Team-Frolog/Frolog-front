@@ -26,6 +26,9 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: center;
     align-items: center;
     background-color: #f1f1f1;
+
+    overscroll-behavior-y: none;
+    overflow: hidden;
   }
 `;
 
