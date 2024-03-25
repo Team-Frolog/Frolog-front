@@ -3,14 +3,15 @@ import styled from 'styled-components';
 import { motion, useAnimation, useDragControls } from 'framer-motion';
 import Line from '../assets/bottomSheet/Line.svg';
 import { fadeUp } from '../styles/GlobalStyles';
+import CommentList from '../components/comment/CommentList';
+import CommentInput from '../components/comment/CommentInput';
 
 type CommentBottomSheetProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 function CommentBottomSheet({ setOpen }: CommentBottomSheetProps) {
-  const ref = useRef<HTMLDivElement | null>(null); // BottomSheet에 대한 red
-  const [initialY, setInitialY] = useState<number>(0); // BottomSheet 초기 y 위치
+  const ref = useRef<HTMLDivElement | null>(null); // BottomSheet에 대한 ref
   const [sheetHeight, setSheetHeight] = useState<number>(0); // BottomSheet 높이
   const controls = useAnimation(); // BottomSheet 애니메이션 제어
   const dragControls = useDragControls(); // drag 제어
@@ -18,7 +19,6 @@ function CommentBottomSheet({ setOpen }: CommentBottomSheetProps) {
   /* ----- 마운트 시 초기 y 위치, botton sheet 높이 구하기 ----- */
   useEffect(() => {
     if (ref.current) {
-      setInitialY(ref.current.offsetTop);
       setSheetHeight(ref.current.offsetHeight);
     }
   }, []);
@@ -44,11 +44,10 @@ function CommentBottomSheet({ setOpen }: CommentBottomSheetProps) {
         dragControls={dragControls}
         dragListener={false}
         dragConstraints={{
-          top: -initialY + 10, // 초기 y 위치 + 10만큼 위로 드래그 가능
-          bottom: sheetHeight * 0.3, // 시트 높이 * 0.3 만큼 아래로 드래그 가능
+          top: 0,
+          bottom: 0,
         }}
         dragElastic={0.1}
-        onDragStart={() => setInitialY(ref.current?.offsetTop || 0)} // 드래그 시작 시 초기 Y 위치 업데이트
         onDragEnd={handleDragEnd} // 드래그 종료 이벤트 처리
         animate={controls} // 애니메이션 적용
         transition={{ duration: 0.5 }} // 애니메이션 지속 시간
@@ -56,6 +55,8 @@ function CommentBottomSheet({ setOpen }: CommentBottomSheetProps) {
         <Header onPointerDown={(e) => dragControls.start(e)}>
           <img src={Line} alt='line' />
         </Header>
+        <CommentList />
+        <CommentInput />
       </BottomSheet>
     </Background>
   );
@@ -76,16 +77,24 @@ const Background = styled.div`
 
 const BottomSheet = styled(motion.div)`
   width: 100%;
-  height: calc(100% + 20px);
+  height: 80vh;
   background-color: ${({ theme }) => theme.colors.bg_white};
   border-radius: 18px 18px 0 0;
-  padding-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   position: absolute;
-  top: 20%;
+  bottom: 0;
   left: 0;
   z-index: 999;
   animation: ${fadeUp} 1s;
+
+  // 모바일 사이즈(최대 430px)에서 벗어날 경우 사이즈 고정
+  @media screen and (min-width: 430px) {
+    height: 80%;
+  }
 `;
 
 const Header = styled.button`

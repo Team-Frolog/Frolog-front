@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     background: none;
     border: none;
     box-sizing: content-box;
+    padding: 0;
   }
   body {
     margin: 0;
@@ -26,10 +27,18 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: center;
     align-items: center;
     background-color: #f1f1f1;
+
+    overscroll-behavior-y: none;
+    overflow: hidden;
   }
 `;
 
 export const fadeUp = keyframes`
   0% { transform: translateY(100%); }
+  100% { transform: translateY(0%); }
+`;
+
+export const fadeDown = keyframes`
+  0% { transform: translateY(-100%);  }
   100% { transform: translateY(0%); }
 `;

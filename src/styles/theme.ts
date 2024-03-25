@@ -4,6 +4,7 @@ const colors: Colors = {
   key_color: '#ACD1AD',
   key_color_light: '#DCE4DC',
   bg_white: '#ffffff',
+  text_white: '#fff',
   text_black: '#000',
   text_lightgray: '#B1B1B1',
   text_red: '#F00',
