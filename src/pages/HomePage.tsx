@@ -14,7 +14,6 @@ function HomePage() {
 
   return (
     <Container>
-      <Box />
       <button
         type='button'
         onClick={() => setCommentOpen(true)}
@@ -22,7 +21,12 @@ function HomePage() {
       >
         댓글 바텀시트 테스트
       </button>
-      <Box />
+      <button type='button' style={{ border: '1px solid gray' }}>
+        팝업 테스트
+      </button>
+      <button type='button' style={{ border: '1px solid gray' }}>
+        공유하기 테스트
+      </button>
       {commentOpen && <CommentBottomSheet setOpen={setCommentOpen} />}
     </Container>
   );
@@ -32,11 +36,6 @@ export default HomePage;
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
-`;
-
-const Box = styled.div`
-  width: 100%;
-  height: 1000px;
-  background-color: aliceblue;
+  min-height: 100%;
+  height: fit-content;
 `;

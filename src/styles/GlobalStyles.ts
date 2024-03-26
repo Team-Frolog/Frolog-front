@@ -32,13 +32,6 @@ export const GlobalStyles = createGlobalStyle`
 
     overscroll-behavior-y: none;
     overflow: auto;
-
-    // 스크롤바 제거
-    @media screen and (min-width: 430px) {
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
   }
 `;
 
