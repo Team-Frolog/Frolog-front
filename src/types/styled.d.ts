@@ -5,6 +5,7 @@ declare module 'styled-components' {
     key_color: string;
     key_color_light: string;
     bg_white: string;
+    bg_popup: string;
     text_white: string;
     text_black: string;
     text_lightgray: string;
@@ -21,5 +22,6 @@ declare module 'styled-components' {
     xl: string;
     xxl: string;
     xxxl: string;
+    title: string;
   }
 }

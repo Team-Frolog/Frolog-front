@@ -67,7 +67,7 @@ export default CommentBottomSheet;
 const Background = styled.div`
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
-  background-color: #80808076;
+  background-color: ${({ theme }) => theme.colors.bg_popup};
 
   position: fixed;
   bottom: 0;
