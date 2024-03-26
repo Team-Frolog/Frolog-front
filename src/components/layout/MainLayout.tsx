@@ -7,7 +7,9 @@ function MainLayout() {
   return (
     <Container>
       <Header />
-      <Outlet />
+      <Content>
+        <Outlet />
+      </Content>
       <NavigationBar />
     </Container>
   );
@@ -27,6 +29,11 @@ const Container = styled.div`
   // 모바일 사이즈(최대 430px)에서 벗어날 경우 사이즈 고정
   @media screen and (min-width: 430px) {
     width: 450px;
-    height: 100vh;
+    min-height: 100vh;
   }
+`;
+
+const Content = styled.div`
+  flex: 1;
+  width: 100%;
 `;

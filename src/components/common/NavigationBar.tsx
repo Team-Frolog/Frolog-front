@@ -46,6 +46,7 @@ const NavigationBarContainer = styled.nav`
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.bg_white};
 
+  position: -webkit-sticky;
   position: sticky;
   bottom: 0;
   left: 0;

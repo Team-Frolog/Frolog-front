@@ -31,6 +31,7 @@ const HeaderContainer = styled.header`
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.bg_white};
 
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;

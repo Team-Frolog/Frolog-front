@@ -76,6 +76,7 @@ const Background = styled.div`
 
   // 모바일 사이즈(최대 430px)에서 벗어날 경우 사이즈 고정
   @media screen and (min-width: 430px) {
+    top: 0;
     width: 450px;
     height: 100vh;
   }
