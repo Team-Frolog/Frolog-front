@@ -29,7 +29,11 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   padding: 0 16px;
   box-sizing: border-box;
-  position: relative;
+  background-color: ${({ theme }) => theme.colors.bg_white};
+
+  position: sticky;
+  top: 0;
+  left: 0;
 `;
 
 const Logo = styled.h1`

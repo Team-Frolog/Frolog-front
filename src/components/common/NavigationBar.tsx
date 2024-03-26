@@ -44,7 +44,11 @@ const NavigationBarContainer = styled.nav`
   height: 110px;
   width: 100%;
   box-sizing: border-box;
-  position: relative;
+  background-color: ${({ theme }) => theme.colors.bg_white};
+
+  position: sticky;
+  bottom: 0;
+  left: 0;
 `;
 
 const NavItem = styled.div`
@@ -68,7 +72,7 @@ const Label = styled.span`
   flex-shrink: 0;
   color: #000;
   text-align: center;
-  font-size: 8px;
+  font-size: ${({ theme }) => theme.fontSize.xs};
   font-style: normal;
   font-weight: 400;
   line-height: normal;

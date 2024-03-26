@@ -10,14 +10,19 @@ import MyPage from './pages/MyPage';
 import MainLayout from './components/layout/MainLayout';
 
 function App() {
+  /* ----- vh 구하는 함수 (for mobile) ----- */
   const setScreenSize = () => {
-    const vh = window.innerHeight * 0.01; // 하단 bar 제외 높이 -> 100등분 (1vh 구하기 위함)
+    const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   };
 
   useEffect(() => {
     setScreenSize();
-  });
+    window.addEventListener('resize', setScreenSize); // resize 이벤트 감지
+    return () => {
+      window.removeEventListener('resize', setScreenSize); // 컴포넌트가 언마운트될 때 정리
+    };
+  }, []);
 
   return (
     <>

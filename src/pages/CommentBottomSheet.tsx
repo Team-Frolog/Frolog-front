@@ -66,13 +66,19 @@ export default CommentBottomSheet;
 
 const Background = styled.div`
   width: 100%;
-  height: 100%;
+  height: calc(var(--vh, 1vh) * 100);
   background-color: #80808076;
 
-  position: absolute;
-  top: 0;
+  position: sticky;
+  bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 900;
+
+  // 모바일 사이즈(최대 430px)에서 벗어날 경우 사이즈 고정
+  @media screen and (min-width: 430px) {
+    width: 450px;
+    height: 100vh;
+  }
 `;
 
 const BottomSheet = styled(motion.div)`
