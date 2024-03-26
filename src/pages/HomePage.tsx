@@ -14,6 +14,19 @@ function HomePage() {
     document.body.style.overflow = 'auto';
   }
 
+  /* ----- 피드 공유 함수 ----- */
+  const handleShare = async () => {
+    try {
+      await window.navigator.share({
+        title: '테스트', // 피드명 (아마.. 책이름?)
+        text: 'testtesttest', // 한줄 리뷰
+        url: '', // 피드 상세페이지 링크
+      });
+    } catch (err) {
+      alert('공유 기능이 지원되지 않는 환경입니다.');
+    }
+  };
+
   return (
     <Container>
       <button
@@ -30,7 +43,11 @@ function HomePage() {
       >
         팝업 테스트
       </button>
-      <button type='button' style={{ border: '1px solid gray' }}>
+      <button
+        type='button'
+        onClick={() => handleShare()}
+        style={{ border: '1px solid gray' }}
+      >
         공유하기 테스트
       </button>
       {commentOpen && <CommentBottomSheet setOpen={setCommentOpen} />}
