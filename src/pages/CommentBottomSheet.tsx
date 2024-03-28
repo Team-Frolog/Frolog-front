@@ -66,13 +66,21 @@ export default CommentBottomSheet;
 
 const Background = styled.div`
   width: 100%;
-  height: 100%;
-  background-color: #80808076;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: ${({ theme }) => theme.colors.bg_popup};
 
-  position: absolute;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 900;
+
+  // 모바일 사이즈(최대 430px)에서 벗어날 경우 사이즈 고정
+  @media screen and (min-width: 430px) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+  }
 `;
 
 const BottomSheet = styled(motion.div)`

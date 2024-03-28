@@ -17,10 +17,12 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: content-box;
     padding: 0;
   }
+  html {
+    background-color: #f1f1f1;
+  }
   body {
     margin: 0;
     width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
     font-family: "Pretendard";
 
     display: flex;
@@ -29,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #f1f1f1;
 
     overscroll-behavior-y: none;
-    overflow: hidden;
+    overflow: auto;
   }
 `;
 

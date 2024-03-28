@@ -4,6 +4,7 @@ const colors: Colors = {
   key_color: '#ACD1AD',
   key_color_light: '#DCE4DC',
   bg_white: '#ffffff',
+  bg_popup: '#80808076',
   text_white: '#fff',
   text_black: '#000',
   text_lightgray: '#B1B1B1',
@@ -21,6 +22,7 @@ const fontSize: Font = {
   xl: '18px',
   xxl: '20px',
   xxxl: '24px',
+  title: '28px',
 };
 
 export const theme = {
